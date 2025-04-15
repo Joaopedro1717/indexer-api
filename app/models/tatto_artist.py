@@ -6,6 +6,6 @@ class TattoArtist(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, nullable=False)
-    username = Column(String, unique=True, nullable=False)
-    description = Column(String)
-    hashtags = Column(String)
+    username = Column(String, nullable=False, unique=True)
+    description = Column(String, nullable=True)
+    hashtags = Column(String, nullable=True)

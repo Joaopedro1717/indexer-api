@@ -1,16 +1,14 @@
 from pydantic import BaseModel
+from typing import Optional
 
 class TattoArtistBase(BaseModel):
     name: str
     username: str
-    description: str | None = None
-    hashtags: str | None = None
+    description: Optional[str] = ""
+    hashtags: Optional[str] = ""
 
 class TattoArtistCreate(TattoArtistBase):
     pass
 
 class TattoArtistRead(TattoArtistBase):
     id: int
-
-    class Config:
-        orm_mode = True
